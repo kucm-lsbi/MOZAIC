@@ -1,0 +1,17 @@
+name: MOZAIC
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - openbabel
+  - pip
+  - pip:
+      - rdkit
+      - tqdm
+      - meeko
+      - vina
+      - scipy
+      - gemmi
+      - pandas
+      - pyyaml
+      - openpyxl
