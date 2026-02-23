@@ -37,7 +37,7 @@ python main.py \
 | Argument | Status | Description |
 |---|---|---|
 | `-s` | Required | Path to the initial molecule SMILES file (`.smi`). |
-| `-r` | Required | Path to the receptor file (`.pdb` or `.pdbqt`). PDB files are automatically converted to PDBQT format via Open Babel. |
+| `-r` | Required | Path to the receptor file (`.pdb` or `.pdbqt`). |
 | `--site` | Required | Target binding residues formatted as `Chain:ResNum,ResNum,...` (e.g., `A:63,72`). Multiple chains are supported. |
 | `-j` | Optional | Job name, used as a prefix for output directories and files. |
 | `-c` | Optional | Path to a custom configuration file (default: `./config/default.yaml`). |
