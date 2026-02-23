@@ -13,7 +13,7 @@ Starting from an initial molecule, MOZAIC performs fragment growing to build an 
 Clone the repository and create the conda environment:
 
 ```bash
-git clone https://github.com/kucm-lsbi/MOZAIC
+git clone https://github.com/kucm-lsbi/MOZAIC.git
 cd MOZAIC
 
 conda env create -f environment.yaml
