@@ -33,14 +33,16 @@ python main.py \
 ```
 
 ## Arguments
-|Argument|Status|Description|
-|-s|Required|Path to the initial molecule's SMILES file (.smi).|
-|-r|Required|Path to the receptor file (.pdb or .pdbqt). Note: PDB files are automatically converted to PDBQT format via OpenBabel.|
-|--site|Required|"Target binding residues formatted as Chain:ResNum (e.g.| A:63|72). Multiple chains are supported."|
-|-j|Optional|"Job name| used as a prefix for output directories and files."|
-|-c|Optional|Path to a custom configuration file (default: ./config/default.yaml).|
-|-o|Optional|Path to the output directory (default: ./result).|
-|-h|Optional|Show the help message and exit.|
+
+| Argument | Status | Description |
+|---|---|---|
+| `-s` | Required | Path to the initial molecule SMILES file (`.smi`). |
+| `-r` | Required | Path to the receptor file (`.pdb` or `.pdbqt`). PDB files are automatically converted to PDBQT format via Open Babel. |
+| `--site` | Required | Target binding residues formatted as `Chain:ResNum,ResNum,...` (e.g., `A:63,72`). Multiple chains are supported. |
+| `-j` | Optional | Job name, used as a prefix for output directories and files. |
+| `-c` | Optional | Path to a custom configuration file (default: `./config/default.yaml`). |
+| `-o` | Optional | Path to the output directory (default: `./result`). |
+| `-h` | Optional | Show the help message and exit. |
 
 # Notes
 
