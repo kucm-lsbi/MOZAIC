@@ -4,7 +4,7 @@ csa:
   n_gen0: 1000
 
 docking:
-  n_cpu: 4
+  n_cpu: 2
   box_size: [20, 20, 20]
   exhaustiveness: 1
   n_poses: 10
