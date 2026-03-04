@@ -22,16 +22,6 @@ conda activate MOZAIC
 
 # 🚀 Usage
 
-## Quick Start Example
-
-```bash
-python main.py \
-  -s ./example/IU0.smi \
-  -r ./example/7zdn_A.pdb \
-  --site A:63,72,73,74,75,76,81,82,101,102,103,107,108,109,110,111 \
-  -j 7zdn
-```
-
 ## Arguments
 
 | Argument | Status | Description |
@@ -43,6 +33,16 @@ python main.py \
 | `-c` | Optional | Path to a custom configuration file (default: `./config/default.yaml`). |
 | `-o` | Optional | Path to the output directory (default: `./result`). |
 | `-h` | Optional | Show the help message and exit. |
+
+## Quick Start
+
+```bash
+python main.py \
+  -s ./example/IU0.smi \
+  -r ./example/7zdn_A.pdb \
+  --site A:63,72,73,74,75,76,81,82,101,102,103,107,108,109,110,111 \
+  -j 7zdn
+```
 
 # Notes
 
