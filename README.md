@@ -8,7 +8,7 @@ Starting from an initial molecule, MOZAIC performs fragment growing to build an 
 
 ---
 
-## 🛠️ Installation & Environment
+## 🛠️ Installation
 
 Clone the repository and create the conda environment:
 
@@ -64,7 +64,9 @@ Log file saved to : results/7zdn/run.log
 ==================================================
 
 Converting receptor PDB to PDBQT: ...
+
 [Visualization] Initial molecule saved to: results/7zdn/initial_mol.png
+
 ----------------------------------------------------------------------------------------------------
  No.  | Main Atom (ID)  | FG Name                                            | Full Atoms
 ----------------------------------------------------------------------------------------------------
@@ -77,6 +79,7 @@ Converting receptor PDB to PDBQT: ...
 
  2    | N:7             | primary_or_secondary_amine_C_aryl_alkyl_robust     | [N:7]
 ----------------------------------------------------------------------------------------------------
+
 💡 Recommendation: Check the atom positions before selection 'results/7zdn/initial_mol.png'
 
 Usage: Enter the 'No.' of sites to use (space separated, e.g. 1 2 3).
@@ -87,11 +90,13 @@ Usage: Enter the 'No.' of sites to use (space separated, e.g. 1 2 3).
 
 ## Notes
 
-If the receptor is provided as `.pdb`, Open Babel must be available to convert it to `.pdbqt`.
-  (`.pdbqt` inputs do not require conversion.)
-  
 MOZAIC writes results under `results/<job_name>/`, including:
 - `run.log`: full execution log
+- copied config file: configuration used for the run
 - `initial_mol.png`: 2D depiction of the initial molecule for atom-site inspection
-- optimized final bank (ranked candidates)
+- receptor `.pdbqt` file: the processed receptor used for docking
+- initial bank: starting pool of candidate molecules
+- final bank: the ranked candidate molecules after MOZAIC optimization
 - ranked protein–ligand complex structures (PDB)
+
+If the receptor is provided as `.pdb`, Open Babel must be available to convert it to `.pdbqt`.
