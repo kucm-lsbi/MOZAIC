@@ -21,19 +21,9 @@ conda env create -f environment.yaml
 conda activate MOZAIC
 ```
 
-# 🚀 Usage
+## 🚀 Usage
 
-## Quick Start
-
-```bash
-python main.py \
-  -s ./example/IU0.smi \
-  -r ./example/7zdn_A.pdb \
-  --site A:63,72,73,74,75,76,81,82,101,102,103,107,108,109,110,111 \
-  -j 7zdn
-```
-
-## Arguments
+### Arguments
 
 | Argument | Status | Description |
 |---|---|---|
@@ -45,7 +35,46 @@ python main.py \
 | `-o` | Optional | Path to the output directory (default: `./result`). |
 | `-h` | Optional | Show the help message and exit. |
 
-# Notes
+### Quick Start
+
+```bash
+python main.py \
+  -s ./example/IU0.smi \
+  -r ./example/7zdn_A.pdb \
+  --site A:63,72,73,74,75,76,81,82,101,102,103,107,108,109,110,111 \
+  -j 7zdn
+```
+
+### What Happens Next
+
+After running the command, MOZAIC will:
+
+- create the output directory and save a log file,
+- convert the receptor from `.pdb` to `.pdbqt` if needed,
+- generate `initial_mol.png` for atom position inspection,
+- prompt you to select atom sites for fragment growing.
+
+Example output:
+
+```bash
+==================================================
+MOZAIC Started at 2026-03-05 06:25:19
+Output Directory  : results/7zdn
+Log file saved to : results/7zdn/run.log
+==================================================
+
+Converting receptor PDB to PDBQT: ...
+[Visualization] Initial molecule saved to: results/7zdn/initial_mol.png
+
+💡 Recommendation: Check the atom positions before selection 'results/7zdn/initial_mol.png'
+
+Usage: Enter the 'No.' of sites to use (space separated, e.g. 1 2 3).
+       Type 'all' to use everything, or 'q' to quit.
+
+>> Select atoms to start MOZAIC:
+```
+
+## Notes
 
 The output includes the optimized final bank and ranked protein–ligand complex PDB files.
 
