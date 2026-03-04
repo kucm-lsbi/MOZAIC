@@ -15,7 +15,8 @@ Clone the repository and create the conda environment:
 ```bash
 git clone https://github.com/kucm-lsbi/MOZAIC.git
 cd MOZAIC
-
+```
+```bash
 conda env create -f environment.yaml
 conda activate MOZAIC
 ```
