@@ -1,0 +1,144 @@
+[2026-01-21 20:43:04] [INFO] ==================================================
+[2026-01-21 20:43:04] [INFO] MOZAIC Started at 2026-01-21 20:43:04
+[2026-01-21 20:43:04] [INFO] Output Directory  : results/2rh1_crystal
+[2026-01-21 20:43:04] [INFO] Job Name          : 2rh1_crystal
+[2026-01-21 20:43:04] [INFO] Log file saved to : results/2rh1_crystal/run.log
+[2026-01-21 20:43:04] [INFO] ==================================================
+
+[2026-01-21 20:43:04] [INFO] Copying receptor PDBQT: /home/jovyan/work/2rh1_nolig.pdbqt -> results/2rh1_crystal/2rh1_nolig.pdbqt
+
+[2026-01-21 20:43:04] [INFO] >>> MOZAIC CONFIGS <<<
+
+[2026-01-21 20:43:04] [INFO] ----------------------------------------
+[2026-01-21 20:43:04] [INFO]  [1] INPUT DATA
+[2026-01-21 20:43:04] [INFO]   - Initial Molecule : NCC(O)c1ccc(O)cc1
+[2026-01-21 20:43:04] [INFO]   - Receptor Path    : results/2rh1_crystal/2rh1_nolig.pdbqt
+[2026-01-21 20:43:04] [INFO]   - Binding Sites    : ['A:109,110,113,114,117,118,193,195,199,200,203,204,207,286,289,290,293,308,312,316']
+[2026-01-21 20:43:04] [INFO] ----------------------------------------
+[2026-01-21 20:43:04] [INFO]  [2] DOCKING
+[2026-01-21 20:43:04] [INFO]   - Calculated Center: [-29.679, 9.722, 7.545]
+[2026-01-21 20:43:04] [INFO]   - Box Size         : [20, 20, 20]
+[2026-01-21 20:43:04] [INFO]   - CPU Count        : 4
+[2026-01-21 20:43:04] [INFO] ----------------------------------------
+[2026-01-21 20:43:04] [INFO]  [3] CSA
+[2026-01-21 20:43:04] [INFO]   - Rounds           : 3
+[2026-01-21 20:43:04] [INFO]   - Bank Size        : 60
+[2026-01-21 20:43:04] [INFO]   - Gen0 Size        : 1000
+[2026-01-21 20:43:04] [INFO] ----------------------------------------
+
+[2026-01-21 20:43:04] [INFO] >>> MOZAIC START! <<<
+
+[2026-01-21 20:43:11] [INFO] Generating initial bank...
+
+[2026-01-21 20:43:11] [INFO] Generating Gen0 pool (1000) using 4 CPUs...
+
+[2026-01-21 20:43:21] [INFO]  >> [Worker 0] First 250 attempts: 91.2% Invalid/Duplicate.
+
+[2026-01-21 20:43:38] [INFO]  >> [Worker 2] First 250 attempts: 92.4% Invalid/Duplicate.
+
+[2026-01-21 20:43:48] [INFO]  >> [Worker 3] First 250 attempts: 90.8% Invalid/Duplicate.
+
+[2026-01-21 20:43:49] [INFO]  >> [Worker 1] First 250 attempts: 93.6% Invalid/Duplicate.
+
+[2026-01-21 20:47:55] [INFO]   > Generated 996 unique candidates (Target: 1000).
+
+[2026-01-21 20:55:23] [INFO] Results saved to results/2rh1_crystal/initial_bank.xlsx
+
+[2026-01-21 20:55:23] [INFO] Average Stats -> Affinity: -9.039, QED: 0.325, SA: 4.522
+
+[2026-01-21 20:55:25] [INFO] -------------------------
+[2026-01-21 20:55:25] [INFO] Initial Davg : 0.889
+[2026-01-21 20:55:25] [INFO] Start Dcut   : 0.444
+[2026-01-21 20:55:25] [INFO] Min Dcut     : 0.178
+[2026-01-21 20:55:25] [INFO] Seed Size    : 30
+[2026-01-21 20:55:25] [INFO] -------------------------
+
+[2026-01-21 20:55:25] [INFO] [Round 1/3] Started
+
+[2026-01-21 20:55:25] [INFO] Generating child ...
+
+[2026-01-21 20:55:44] [INFO] Crossover Result -> NewGen: 60, Backup: 60
+[2026-01-21 20:55:53] [INFO] Mutation Complete. Final Sizes -> NewGen: 90, Backup: 90
+
+[2026-01-21 21:06:11] [INFO]   - Bank Updated: 48 times
+[2026-01-21 21:06:11] [INFO]   - Dcut: 0.444 | Unused: 50
+
+[2026-01-21 21:06:11] [INFO] Generating child ...
+
+[2026-01-21 21:06:27] [INFO] Crossover Result -> NewGen: 60, Backup: 60
+[2026-01-21 21:06:51] [INFO] Mutation Complete. Final Sizes -> NewGen: 90, Backup: 90
+
+[2026-01-21 21:16:19] [INFO]   - Bank Updated: 27 times
+[2026-01-21 21:16:19] [INFO]   - Dcut: 0.436 | Unused: 41
+
+[2026-01-21 21:16:19] [INFO] Generating child ...
+
+[2026-01-21 21:16:34] [INFO] Crossover Result -> NewGen: 60, Backup: 60
+[2026-01-21 21:17:02] [INFO] Mutation Complete. Final Sizes -> NewGen: 90, Backup: 90
+
+[2026-01-21 21:25:18] [INFO]   - Bank Updated: 28 times
+[2026-01-21 21:25:18] [INFO]   - Dcut: 0.427 | Unused: 32
+
+[2026-01-21 21:25:18] [INFO] Generating child ...
+
+[2026-01-21 21:25:35] [INFO] Crossover Result -> NewGen: 60, Backup: 60
+[2026-01-21 21:25:41] [INFO] Mutation Complete. Final Sizes -> NewGen: 90, Backup: 90
+
+[2026-01-21 21:33:40] [INFO]   - Bank Updated: 19 times
+[2026-01-21 21:33:40] [INFO]   - Dcut: 0.418 | Unused: 20
+
+[2026-01-21 21:33:40] [INFO]   >> Unused threshold reached. Resetting used status.
+
+[2026-01-21 21:33:40] [INFO] [Round 2/3] Started
+
+[2026-01-21 21:33:40] [INFO] Generating child ...
+
+[2026-01-21 21:33:56] [INFO] Crossover Result -> NewGen: 60, Backup: 60
+[2026-01-21 21:34:11] [INFO] Mutation Complete. Final Sizes -> NewGen: 90, Backup: 90
+
+[2026-01-21 21:42:17] [INFO]   - Bank Updated: 21 times
+[2026-01-21 21:42:17] [INFO]   - Dcut: 0.410 | Unused: 40
+
+[2026-01-21 21:42:17] [INFO] Generating child ...
+
+[2026-01-21 21:42:30] [INFO] Crossover Result -> NewGen: 60, Backup: 60
+[2026-01-21 21:42:57] [INFO] Mutation Complete. Final Sizes -> NewGen: 90, Backup: 90
+
+[2026-01-21 21:50:12] [INFO]   - Bank Updated: 10 times
+[2026-01-21 21:50:12] [INFO]   - Dcut: 0.402 | Unused: 19
+
+[2026-01-21 21:50:12] [INFO]   >> Unused threshold reached. Resetting used status.
+
+[2026-01-21 21:50:12] [INFO] [Round 3/3] Started
+
+[2026-01-21 21:50:12] [INFO] Generating child ...
+
+[2026-01-21 21:50:26] [INFO] Crossover Result -> NewGen: 60, Backup: 60
+[2026-01-21 21:50:40] [INFO] Mutation Complete. Final Sizes -> NewGen: 90, Backup: 90
+
+[2026-01-21 21:57:13] [INFO]   - Bank Updated: 19 times
+[2026-01-21 21:57:13] [INFO]   - Dcut: 0.394 | Unused: 37
+
+[2026-01-21 21:57:13] [INFO] Generating child ...
+
+[2026-01-21 21:57:28] [INFO] Crossover Result -> NewGen: 60, Backup: 60
+[2026-01-21 21:58:21] [INFO] Mutation Complete. Final Sizes -> NewGen: 90, Backup: 90
+
+[2026-01-21 22:04:24] [INFO]   - Bank Updated: 14 times
+[2026-01-21 22:04:24] [INFO]   - Dcut: 0.386 | Unused: 17
+
+[2026-01-21 22:04:24] [INFO]   >> Unused threshold reached. Resetting used status.
+
+[2026-01-21 22:04:24] [INFO] Results saved to results/2rh1_crystal/final_bank.xlsx
+
+[2026-01-21 22:04:24] [INFO] Average Stats -> Affinity: -9.422, QED: 0.673, SA: 3.792
+
+[2026-01-21 22:04:24] [INFO] Saved 60 complex PDB files to results/2rh1_crystal/poses
+
+[2026-01-21 22:04:24] [INFO] >>> MOZAIC Finished! <<<
+
+[2026-01-21 22:04:24] [INFO] ==================================================
+
+[2026-01-21 22:04:24] [INFO] Total Runtime: 1:21:20.292593
+
+[2026-01-21 22:04:24] [INFO] ==================================================
