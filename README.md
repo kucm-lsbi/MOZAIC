@@ -2,7 +2,7 @@
 
 MOZAIC is a molecule optimization algorithm that combines SMARTS-based reaction-driven fragment growing with the Conformational Space Annealing (CSA) algorithm.
 
-Starting from an initial molecule, MOZAIC performs fragment growing to build an initial bank of candidate molecules. It then applies crossover and mutation operators to increase structural diversity, and updates the bank using the Dcut criterion in CSA. As a result, MOZAIC outputs the globally optimized final bank and corresponding protein–ligand complex PDB structures.
+Starting from an initial molecule, MOZAIC first generates an initial bank of candidate molecules through reaction-driven fragment growing. It then refines this bank through CSA by iteratively applying crossover, mutation, and bank updates, ultimately producing a final ranked bank and corresponding protein–ligand complex PDB structures.
 
 ![MOZAIC workflow](./mozaic.png)
 
