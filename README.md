@@ -54,7 +54,7 @@ After running the command, MOZAIC will:
 - generate `initial_mol.png` for atom position inspection,
 - prompt you to select atom sites for fragment growing.
 
-Example output:
+Example:
 
 ```bash
 ==================================================
@@ -82,11 +82,16 @@ Converting receptor PDB to PDBQT: ...
 Usage: Enter the 'No.' of sites to use (space separated, e.g. 1 2 3).
        Type 'all' to use everything, or 'q' to quit.
 
->> Select atoms to start MOZAIC:
+>> Select atoms to start MOZAIC: all
 ```
 
 ## Notes
 
-The output includes the optimized final bank and ranked protein–ligand complex PDB files.
-
-If the receptor is provided in .pdb format, Open Babel must be available in the environment for PDB → PDBQT conversion.
+If the receptor is provided as `.pdb`, Open Babel must be available to convert it to `.pdbqt`.
+  (`.pdbqt` inputs do not require conversion.)
+  
+MOZAIC writes results under `results/<job_name>/`, including:
+- `run.log`: full execution log
+- `initial_mol.png`: 2D depiction of the initial molecule for atom-site inspection
+- optimized final bank (ranked candidates)
+- ranked protein–ligand complex structures (PDB)
