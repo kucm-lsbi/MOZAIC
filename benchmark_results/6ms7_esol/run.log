@@ -1,0 +1,144 @@
+[2026-02-11 12:42:41] [INFO] ==================================================
+[2026-02-11 12:42:41] [INFO] MOZAIC Started at 2026-02-11 12:42:41
+[2026-02-11 12:42:41] [INFO] Output Directory  : results/6ms7
+[2026-02-11 12:42:41] [INFO] Job Name          : 6ms7
+[2026-02-11 12:42:41] [INFO] Log file saved to : results/6ms7/run.log
+[2026-02-11 12:42:41] [INFO] ==================================================
+
+[2026-02-11 12:42:41] [INFO] Converting receptor PDB to PDBQT: /home/jovyan/work/6ms7_nolig.pdb -> results/6ms7/6ms7_nolig.pdbqt
+
+[2026-02-11 12:42:41] [INFO] >>> MOZAIC CONFIGS <<<
+
+[2026-02-11 12:42:41] [INFO] ----------------------------------------
+[2026-02-11 12:42:41] [INFO]  [1] INPUT DATA
+[2026-02-11 12:42:41] [INFO]   - Initial Molecule : O=C(Nc1ccccc1)c1cc([N+](=O)[O-])ccc1Cl
+[2026-02-11 12:42:41] [INFO]   - Receptor Path    : results/6ms7/6ms7_nolig.pdbqt
+[2026-02-11 12:42:41] [INFO]   - Binding Sites    : ['A:226,264,278,281,282,283,285,286,288,289,292,295,296,323,326,327,329,330,333,340,341,342,343,353,356,360,363,364,367,449,453,463,464,465,469,473']
+[2026-02-11 12:42:41] [INFO] ----------------------------------------
+[2026-02-11 12:42:41] [INFO]  [2] DOCKING
+[2026-02-11 12:42:41] [INFO]   - Calculated Center: [49.603, 10.502, 10.184]
+[2026-02-11 12:42:41] [INFO]   - Box Size         : [20, 20, 20]
+[2026-02-11 12:42:41] [INFO]   - CPU Count        : 4
+[2026-02-11 12:42:41] [INFO] ----------------------------------------
+[2026-02-11 12:42:41] [INFO]  [3] CSA
+[2026-02-11 12:42:41] [INFO]   - Rounds           : 3
+[2026-02-11 12:42:41] [INFO]   - Bank Size        : 60
+[2026-02-11 12:42:41] [INFO]   - Gen0 Size        : 1000
+[2026-02-11 12:42:41] [INFO] ----------------------------------------
+
+[2026-02-11 12:42:41] [INFO] >>> MOZAIC START! <<<
+
+[2026-02-11 12:43:04] [INFO] Generating initial bank...
+
+[2026-02-11 12:43:04] [INFO] Generating Gen0 pool (1000) using 4 CPUs...
+
+[2026-02-11 12:47:10] [INFO]  >> [Worker 0] First 250 attempts: 60.0% Invalid/Duplicate.
+
+[2026-02-11 12:49:06] [INFO]  >> [Worker 3] First 250 attempts: 64.8% Invalid/Duplicate.
+
+[2026-02-11 12:50:00] [INFO]  >> [Worker 1] First 250 attempts: 66.4% Invalid/Duplicate.
+
+[2026-02-11 12:52:47] [INFO]  >> [Worker 2] First 250 attempts: 62.0% Invalid/Duplicate.
+
+[2026-02-11 13:07:04] [INFO]   > Generated 1000 unique candidates (Target: 1000).
+
+[2026-02-11 13:13:40] [INFO] Results saved to results/6ms7/initial_bank.xlsx
+
+[2026-02-11 13:13:41] [INFO] Average Stats -> Affinity: -7.797, QED: 0.151, SA: 3.793
+
+[2026-02-11 13:13:42] [INFO] -------------------------
+[2026-02-11 13:13:42] [INFO] Initial Davg : 0.790
+[2026-02-11 13:13:42] [INFO] Start Dcut   : 0.395
+[2026-02-11 13:13:42] [INFO] Min Dcut     : 0.158
+[2026-02-11 13:13:42] [INFO] Seed Size    : 30
+[2026-02-11 13:13:42] [INFO] -------------------------
+
+[2026-02-11 13:13:42] [INFO] [Round 1/3] Started
+
+[2026-02-11 13:13:42] [INFO] Generating child ...
+
+[2026-02-11 13:14:02] [INFO] Crossover Result -> NewGen: 60, Backup: 60
+[2026-02-11 13:14:56] [INFO] Mutation Complete. Final Sizes -> NewGen: 90, Backup: 90
+
+[2026-02-11 13:25:35] [INFO]   - Bank Updated: 54 times
+[2026-02-11 13:25:35] [INFO]   - Dcut: 0.395 | Unused: 49
+
+[2026-02-11 13:25:35] [INFO] Generating child ...
+
+[2026-02-11 13:25:52] [INFO] Crossover Result -> NewGen: 60, Backup: 60
+[2026-02-11 13:28:52] [INFO] Mutation Complete. Final Sizes -> NewGen: 90, Backup: 90
+
+[2026-02-11 13:37:12] [INFO]   - Bank Updated: 35 times
+[2026-02-11 13:37:12] [INFO]   - Dcut: 0.387 | Unused: 41
+
+[2026-02-11 13:37:12] [INFO] Generating child ...
+
+[2026-02-11 13:37:28] [INFO] Crossover Result -> NewGen: 60, Backup: 60
+[2026-02-11 13:41:37] [INFO] Mutation Complete. Final Sizes -> NewGen: 90, Backup: 90
+
+[2026-02-11 13:49:23] [INFO]   - Bank Updated: 34 times
+[2026-02-11 13:49:23] [INFO]   - Dcut: 0.379 | Unused: 30
+
+[2026-02-11 13:49:23] [INFO] Generating child ...
+
+[2026-02-11 13:49:37] [INFO] Crossover Result -> NewGen: 60, Backup: 60
+[2026-02-11 13:51:03] [INFO] Mutation Complete. Final Sizes -> NewGen: 90, Backup: 90
+
+[2026-02-11 13:57:59] [INFO]   - Bank Updated: 29 times
+[2026-02-11 13:57:59] [INFO]   - Dcut: 0.372 | Unused: 23
+
+[2026-02-11 13:57:59] [INFO]   >> Unused threshold reached. Resetting used status.
+
+[2026-02-11 13:57:59] [INFO] [Round 2/3] Started
+
+[2026-02-11 13:57:59] [INFO] Generating child ...
+
+[2026-02-11 13:58:13] [INFO] Crossover Result -> NewGen: 60, Backup: 60
+[2026-02-11 13:59:59] [INFO] Mutation Complete. Final Sizes -> NewGen: 90, Backup: 90
+
+[2026-02-11 14:06:53] [INFO]   - Bank Updated: 26 times
+[2026-02-11 14:06:53] [INFO]   - Dcut: 0.364 | Unused: 41
+
+[2026-02-11 14:06:53] [INFO] Generating child ...
+
+[2026-02-11 14:07:10] [INFO] Crossover Result -> NewGen: 59, Backup: 60
+[2026-02-11 14:10:13] [INFO] Mutation Complete. Final Sizes -> NewGen: 90, Backup: 90
+
+[2026-02-11 14:17:17] [INFO]   - Bank Updated: 20 times
+[2026-02-11 14:17:17] [INFO]   - Dcut: 0.357 | Unused: 24
+
+[2026-02-11 14:17:17] [INFO]   >> Unused threshold reached. Resetting used status.
+
+[2026-02-11 14:17:17] [INFO] [Round 3/3] Started
+
+[2026-02-11 14:17:17] [INFO] Generating child ...
+
+[2026-02-11 14:17:30] [INFO] Crossover Result -> NewGen: 55, Backup: 58
+[2026-02-11 14:19:04] [INFO] Mutation Complete. Final Sizes -> NewGen: 90, Backup: 90
+
+[2026-02-11 14:25:16] [INFO]   - Bank Updated: 16 times
+[2026-02-11 14:25:16] [INFO]   - Dcut: 0.350 | Unused: 40
+
+[2026-02-11 14:25:16] [INFO] Generating child ...
+
+[2026-02-11 14:25:27] [INFO] Crossover Result -> NewGen: 49, Backup: 42
+[2026-02-11 14:28:37] [INFO] Mutation Complete. Final Sizes -> NewGen: 90, Backup: 90
+
+[2026-02-11 14:34:51] [INFO]   - Bank Updated: 12 times
+[2026-02-11 14:34:51] [INFO]   - Dcut: 0.343 | Unused: 20
+
+[2026-02-11 14:34:51] [INFO]   >> Unused threshold reached. Resetting used status.
+
+[2026-02-11 14:34:51] [INFO] Results saved to results/6ms7/final_bank.xlsx
+
+[2026-02-11 14:34:51] [INFO] Average Stats -> Affinity: -8.599, QED: 0.490, SA: 2.764
+
+[2026-02-11 14:34:51] [INFO] Saved 60 complex PDB files to results/6ms7/poses
+
+[2026-02-11 14:34:51] [INFO] >>> MOZAIC Finished! <<<
+
+[2026-02-11 14:34:51] [INFO] ==================================================
+
+[2026-02-11 14:34:51] [INFO] Total Runtime: 1:52:09.956732
+
+[2026-02-11 14:34:51] [INFO] ==================================================
