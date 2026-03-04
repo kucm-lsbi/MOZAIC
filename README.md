@@ -4,7 +4,7 @@ MOZAIC is a molecule optimization algorithm that combines SMARTS-based reaction-
 
 Starting from an initial molecule, MOZAIC performs fragment growing to build an initial bank of candidate molecules. It then applies crossover and mutation operators to increase structural diversity, and updates the bank using the Dcut criterion in CSA. As a result, MOZAIC outputs the globally optimized final bank and corresponding protein–ligand complex PDB structures.
 
-![MOZAIC workflow](./mozaic.png)
+
 
 ---
 
