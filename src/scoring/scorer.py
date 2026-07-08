@@ -94,4 +94,19 @@ def get_scores(population, backup, receptor_path, binding_center, docking_cfg):
             
         logging.info(f"Successfully replaced {used_backup_count}/{n_failures} failures.")
 
+    # Affinity normalization
+    affinities = [
+        entry["scores"]["affinity"]
+        for entry in population
+        if "affinity" in entry.get("scores", {})
+    ]
+
+    min_aff = min(affinities)
+    max_aff = max(affinities)
+    denom = max_aff - min_aff
+
+    for entry in population:
+        aff = entry["scores"].get("affinity")
+        entry["scores"]["affinity_norm"] = (max_aff - aff) / denom
+
     return population
