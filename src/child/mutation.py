@@ -45,10 +45,10 @@ def get_compatible_fgs(initial_mol, target_uids):
        
     return compatible_fgs
 
-def perform_mutation(item, initial_smiles, initial_mol, existing_smiles):
+def perform_mutation(item, initial_smiles, initial_mol, existing_smiles, skip_prob=0.1):
 
     new_item = copy.deepcopy(item)
-    
+
     if not new_item['rxn_history']:
         return None
 
@@ -56,7 +56,7 @@ def perform_mutation(item, initial_smiles, initial_mol, existing_smiles):
     used_atoms = entry.get('used_atoms', [])
 
     # Skip
-    if random.random() < 0.1:
+    if random.random() < skip_prob:
         entry['selected_fragment'] = 'skip'
         
     else:
@@ -123,11 +123,14 @@ def perform_mutation(item, initial_smiles, initial_mol, existing_smiles):
     
     return new_item
 
-def run_mutation(crossover_population, backup_crossover, seed, initial_smiles):
+def run_mutation(crossover_population, backup_crossover, seed, initial_smiles, child_cfg=None):
 
-    target_size = len(seed) * 3
-    backup_size = len(seed) * 3
-    
+    child_cfg = child_cfg or {}
+    skip_prob = child_cfg.get('mutation_skip_prob', 0.1)
+
+    target_size = len(seed) * child_cfg.get('population_per_seed', 3)
+    backup_size = target_size
+
     # succeeding crossover
     new_gen = list(crossover_population)
     backup = list(backup_crossover)
@@ -145,14 +148,14 @@ def run_mutation(crossover_population, backup_crossover, seed, initial_smiles):
     def fill_list(target_list, limit, source_seeds):
         attempts = 0
         max_attempts = limit * 300
-        
+
         while len(target_list) < limit and attempts < max_attempts:
             attempts += 1
-            
+
             parent = random.choice(source_seeds)
 
             # initial_mol (with IDs)
-            mutant = perform_mutation(parent, initial_smiles, initial_mol, existing_smiles)
+            mutant = perform_mutation(parent, initial_smiles, initial_mol, existing_smiles, skip_prob)
             
             if mutant:
                 target_list.append(mutant)
