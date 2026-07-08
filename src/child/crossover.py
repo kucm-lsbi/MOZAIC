@@ -111,8 +111,10 @@ def process_batch(candidate_list, seed, source_bank, dest_list, initial_smiles, 
             
     return added_count
     
-def run_crossover(seed, initial_bank, current_bank, initial_smiles):
-    
+def run_crossover(seed, initial_bank, current_bank, initial_smiles, child_cfg=None):
+
+    child_cfg = child_cfg or {}
+
     new_gen = []
     backup = []
     existing_smiles = set()
@@ -128,8 +130,8 @@ def run_crossover(seed, initial_bank, current_bank, initial_smiles):
     random.shuffle(initial_candidates)
     random.shuffle(current_candidates)
     
-    target_gen_size = len(seed) * 2
-    target_backup_size = len(seed) * 2
+    target_gen_size = len(seed) * child_cfg.get('crossover_per_seed', 2)
+    target_backup_size = target_gen_size
 
     # Generation
     n_init, n_curr = calculate_quotas(initial_candidates, current_candidates, target_gen_size)
