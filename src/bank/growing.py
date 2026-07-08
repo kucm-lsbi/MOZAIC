@@ -21,7 +21,7 @@ def sanitize_product(mol):
     except Exception:
         return None
         
-def run_growing(initial_smiles, initial_rxn_info, active_fgs_atoms):
+def run_growing(initial_smiles, initial_rxn_info, active_fgs_atoms, skip_probability=0.1):
     
     current_smiles = initial_smiles
     
@@ -50,8 +50,8 @@ def run_growing(initial_smiles, initial_rxn_info, active_fgs_atoms):
         if rxn_position is None:
             break
 
-        # 10% skip
-        if random.random() < 0.1:
+        # skip (probability from config)
+        if random.random() < skip_probability:
             update_used_positions(used_positions, inactive_atoms, available_fg, fg_key, rxn_position, used_atoms)
             
             product_rxn_info.append({
