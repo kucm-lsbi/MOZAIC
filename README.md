@@ -98,5 +98,10 @@ MOZAIC writes results under `results/<job_name>/`, including:
 - initial bank: starting pool of candidate molecules
 - final bank: the ranked candidate molecules after MOZAIC optimization
 - ranked protein–ligand complex structures (PDB)
+- `trackers/`: run diagnostic plots
+  - `track1`: objective progress & bank diversity (Davg)
+  - `track2`: Pareto front & hypervolume growth
+  - `track3`: reaction usage share & top-molecule enrichment
+  - `track4`: reaction–objective coupling & usage
 
 If the receptor is provided as `.pdb`, Open Babel must be available to convert it to `.pdbqt`.
