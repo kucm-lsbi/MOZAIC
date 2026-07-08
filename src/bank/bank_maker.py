@@ -15,8 +15,8 @@ from ..scoring.scorer import get_scores
 
 def _worker_generate_chunk(args):
 
-    initial_smiles, active_fgs_atoms, quota, worker_id = args
-    
+    initial_smiles, active_fgs_atoms, quota, worker_id, skip_prob = args
+
     rdBase.DisableLog('rdApp.error')
     rdBase.DisableLog('rdApp.warning')
     
@@ -45,7 +45,7 @@ def _worker_generate_chunk(args):
         
         # growing
         product_smiles, product_rxn_info, inactive_atoms = run_growing(
-            initial_smiles, initial_rxn_info, active_fgs_atoms
+            initial_smiles, initial_rxn_info, active_fgs_atoms, skip_prob
         )
         
         is_valid = False
@@ -83,16 +83,16 @@ def _worker_generate_chunk(args):
                 
     return local_pool
     
-def generate_diverse_bank(initial_smiles, active_fgs_atoms, n_bank, n_gen0, n_jobs):
-    
+def generate_diverse_bank(initial_smiles, active_fgs_atoms, n_bank, n_gen0, n_jobs, skip_prob=0.1):
+
     logging.info(f"Generating Gen0 pool ({n_gen0}) using {n_jobs} CPUs...\n")
 
     # Quota
     quotas = [n_gen0 // n_jobs] * n_jobs
     quotas[-1] += n_gen0 % n_jobs
-    
+
     tasks = [
-        (initial_smiles, active_fgs_atoms, q, i) 
+        (initial_smiles, active_fgs_atoms, q, i, skip_prob)
         for i, q in enumerate(quotas)
     ]
 
@@ -154,9 +154,10 @@ def make_bank(initial_smiles, active_fgs_atoms, receptor_path, binding_center, d
     n_bank   = csa_cfg['n_bank']
     n_gen0   = csa_cfg['n_gen0']
     n_jobs   = docking_cfg['n_cpu']
-    
+    skip_prob = csa_cfg.get('growing', {}).get('skip_probability', 0.1)
+
     # Make Bank
-    bank, backup_bank = generate_diverse_bank(initial_smiles, active_fgs_atoms, n_bank, n_gen0, n_jobs)
+    bank, backup_bank = generate_diverse_bank(initial_smiles, active_fgs_atoms, n_bank, n_gen0, n_jobs, skip_prob)
 
     # Scoring
     scored_bank = get_scores(
