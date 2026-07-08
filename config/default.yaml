@@ -2,6 +2,19 @@ csa:
   n_rounds: 3
   n_bank: 60
   n_gen0: 1000
+  n_seed: 30
+
+  dcut_start_ratio: 0.5
+  dcut_min_ratio: 0.2
+  dcut_decay_rate: 0.98
+
+  child:
+    crossover_per_seed: 2
+    population_per_seed: 3
+    mutation_skip_prob: 0.1
+
+  growing:
+    skip_probability: 0.1
 
 docking:
   n_cpu: 2
