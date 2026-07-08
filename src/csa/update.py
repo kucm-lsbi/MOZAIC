@@ -1,19 +1,20 @@
 import numpy as np
 from rdkit import Chem
-from rdkit.Chem import AllChem
+from rdkit.Chem import rdFingerprintGenerator
 from rdkit.DataStructs import TanimotoSimilarity
 
+_mfpgen = rdFingerprintGenerator.GetMorganGenerator(radius=4, fpSize=2048)
+
 def distance(smiles1, smiles2):
-    
+
     mol1 = Chem.MolFromSmiles(smiles1)
     mol2 = Chem.MolFromSmiles(smiles2)
-    
-    # Radius 4, bit 2048 
-    fp1 = AllChem.GetMorganFingerprintAsBitVect(mol1, 4, nBits=2048)
-    fp2 = AllChem.GetMorganFingerprintAsBitVect(mol2, 4, nBits=2048)
-    
+
+    fp1 = _mfpgen.GetFingerprint(mol1)
+    fp2 = _mfpgen.GetFingerprint(mol2)
+
     dist = 1 - TanimotoSimilarity(fp1, fp2)
-    
+
     return dist
 
 def calc_davg(generation):
