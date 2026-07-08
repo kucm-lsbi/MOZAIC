@@ -9,8 +9,8 @@ csa:
   dcut_decay_rate: 0.98
 
   child:
-    crossover_per_seed: 2
-    population_per_seed: 3
+    crossover_per_seed: 2 # n_seed * 2
+    population_per_seed: 3 # n_seed * 3
     mutation_skip_prob: 0.1
 
   growing:
