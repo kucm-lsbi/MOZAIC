@@ -1,5 +1,7 @@
 # MOZAIC 🧩
 
+[![DOI](https://img.shields.io/badge/DOI-10.1093/bioinformatics/btag595-blue)](https://doi.org/10.1093/bioinformatics/btag595)
+
 MOZAIC is a molecule optimization algorithm that combines SMARTS-based reaction-driven fragment growing with the Conformational Space Annealing (CSA) algorithm.
 
 Starting from an initial molecule, MOZAIC first generates an initial bank of candidate molecules through reaction-driven fragment growing. It then refines this bank through CSA by iteratively applying crossover, mutation, and bank updates, ultimately producing a final ranked bank and corresponding protein–ligand complex PDB structures.
